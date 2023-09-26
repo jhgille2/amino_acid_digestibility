@@ -16,7 +16,8 @@ add_genotype_names <- function(genotype_lookup_file, clean_aa_data) {
   # Add the genotypes
   genotypes_added <- left_join(clean_aa_data, genotype_lookup_tbl, by = c("usda_id" = "id")) %>% 
     relocate(genotype, .after = "usda_id") %>% 
-    relocate(location, .after = genotype)
+    relocate(location, .after = genotype) %>% 
+    distinct()
   
   # Return the full table
   return(genotypes_added)

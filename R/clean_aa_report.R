@@ -76,7 +76,7 @@ clean_aa_report <- function(aa_report_file){
   combined_pheno <- pmap_dfr(indices_tbl, subset_aa_df) %>% 
     mutate(across(2:ncol(.), as.numeric)) %>% 
     mutate(across(2:(ncol(.) - 2), function(x) x * 1000)) %>%      # Convert values to mg
-    mutate(across(2:(ncol(.) - 2), function(x) x / crude_protein)) # Convert values to a proportion (mg/g) of crude protein
+    mutate(across(2:(ncol(.) - 2), function(x) x / round(crude_protein, 2))) # Convert values to a proportion (mg/g) of crude protein
   
   return(combined_pheno)
 }
