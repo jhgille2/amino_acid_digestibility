@@ -22,14 +22,16 @@ clean_aa_report <- function(aa_report_file){
     aa_df_col_1 <- as.character(unlist(aa_df[, 1]))
     aa_df_col_1 <- gsub("Taurine §", "Taurine", aa_df_col_1)
     
-    # Which row has "ESCL #"
+    # Which row has "ESCL #", and what rows have other important strings that consistently
+    # indicate the boundaries of important tables/single rows
     escl_rows          <- which(aa_df_col_1 == "ESCL #")
     id_rows            <- which(aa_df_col_1 == "USDA ID")
     taurine_rows       <- str_detect(aa_df_col_1, "Taurine") %>% which()
     tryptophan_rows    <- which(aa_df_col_1 == "Tryptophan")
     total_rows         <- which(aa_df_col_1 == "Total")
     crude_protein_rows <- which(aa_df_col_1 == "Crude protein*")
-    
+
+    # Make a table to hold these indices and return the table
     indices_tbl <- tibble(escl          = escl_rows,
                           ids           = id_rows,
                           taurine       = taurine_rows,
@@ -74,8 +76,8 @@ clean_aa_report <- function(aa_report_file){
   # bind the rows of all the results
   combined_pheno <- pmap_dfr(indices_tbl, subset_aa_df) %>% 
     mutate(across(2:ncol(.), as.numeric)) %>% 
-    mutate(across(2:(ncol(.) - 2), function(x) x * 1000)) %>% 
-    mutate(across(2:(ncol(.) - 2), function(x) x / crude_protein))
+    mutate(across(2:(ncol(.) - 2), function(x) x * 1000)) %>%      # Convert values to mg
+    mutate(across(2:(ncol(.) - 2), function(x) x / crude_protein)) # Convert values to a proportion (mg/g) of crude protein
   
   return(combined_pheno)
 }
