@@ -20,7 +20,6 @@ clean_aa_report <- function(aa_report_file){
     
     # col 1 as a character
     aa_df_col_1 <- as.character(unlist(aa_df[, 1]))
-    aa_df_col_1 <- gsub("Taurine §", "Taurine", aa_df_col_1)
     
     # Which row has "ESCL #", and what rows have other important strings that consistently
     # indicate the boundaries of important tables/single rows
