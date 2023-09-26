@@ -1,8 +1,8 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
-aa_report_file|stem|ed1c281088f2cf06|367c07adffbf0a31|c3b5fc02cdc369c1|-1431553506|G:/My Drive/phd_notes/Projects/Mapping populations/amino_acid_digestibility/data/raw data/11238 Shea.xls|t19626.6882465856s|20ed913fce8d45f4|124928|file|local|vector|||0||
+aa_report_file|stem|39e9210307bbcf4f|367c07adffbf0a31|c3b5fc02cdc369c1|-1431553506|G:/My Drive/phd_notes/Projects/Mapping populations/amino_acid_digestibility/data/raw data/11238 Shea.xls|t19626.6881384954s|20ed913fce8d45f4|124928|file|local|vector|||0.02||
 add_genotype_names|function|5f36fb9e97874d6d|||||||||||||||
-clean_aa_data|stem|bcd47a895405fc93|439b8eb2bf022895|f113f507dd9e0b20|-2024483893||t19626.7703170833s|40c35bc0c5606bc9|23686|rds|local|vector|||1.28||
-clean_aa_report|function|be78adc2ffeb7779|||||||||||||||
+clean_aa_data|stem|bcd47a895405fc93|439b8eb2bf022895|dc1c5077d50d743e|-2024483893||t19626.7773376157s|40c35bc0c5606bc9|23686|rds|local|vector|||1.35||
+clean_aa_report|function|c0036e79ae39874e|||||||||||||||
 example_aa|stem|bb50c2a80a3ae474|3fd9b7402f847b6f|c3b5fc02cdc369c1|-217010180|G:/My Drive/phd_notes/Projects/Mapping populations/amino_acid_digestibility/data/example_amino_acid_data.xls|t19626.6907130093s|af95f0a64a3a2b11|29184|file|local|vector|||0||
 full_aa_data|stem|fcd02f93a2e8e9be|de4491daed2bdb3c|b7828d0c15693a6d|1676953319||t19626.7703218634s|17c8f286b9241661|24173|rds|local|vector|||0.3||
 genotype_lookup_file|stem|93e3544bc39a8663|37a6a105042c7d1b|c3b5fc02cdc369c1|-109925478|G:/My Drive/phd_notes/Projects/Mapping populations/amino_acid_digestibility/data/genotype_lookup_table.csv|t19626.7642673495s|8a2fd3bcecd9b76a|1866|file|local|vector|||0||
